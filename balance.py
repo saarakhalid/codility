@@ -3,11 +3,9 @@ def solution(A, D):
     total_income = 0
     total_expenses = 0
     
-    for amount, date in zip(A, D):
-        key = f"{year}-{month}"
-        
-        transactions[key] = transactions.get(key, 0) + amount
-        
+    for amount, date in (A, D):
+        year, month,  = date.split('-')
+    
         if amount >= 0:
             total_income += amount
         else:
@@ -15,6 +13,7 @@ def solution(A, D):
     
     total_fee = sum(5 for amount in transactions.values() if amount < -5)
     
+     # Calculate the final balance
     final_balance = total_income + total_expenses - total_fee
     return final_balance
 
@@ -33,8 +32,8 @@ print(solution(A3, D3))
 
 A4 = [100, 100, -10, -20, -30]
 D4 = ["2020-01-01", "2020-02-01", "2020-02-11", "2020-02-05", "2020-02-08"]
-print(solution(A4, D4))  
+print(solution(A4, D4))
 
 A5 = [60, 60, -40, -20]
 D5 = ["2020-10-01", "2020-02-02", "2020-10-10", "2020-10-30"]
-print(solution(A5, D5))  
+print(solution(A5, D5)) 
