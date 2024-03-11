@@ -4,7 +4,6 @@ def solution(A, D):
     total_expenses = 0
     
     for amount, date in zip(A, D):
-        year, month, _ = date.split('-')
         key = f"{year}-{month}"
         
         transactions[key] = transactions.get(key, 0) + amount
