@@ -1,11 +1,18 @@
 def solution(A, D):
+    # Initialize an empty dictionary to store transactions
     transactions = {}
+     # Initialize variables to keep track of total income and expenses
     total_income = 0
     total_expenses = 0
     
-    for amount, date in (A, D):
+     # Iterate over the amounts and dates using zip
+    for amount, date in zip(A, D):
+        # Extract year and month from the date string
         year, month,  = date.split('-')
+       # Create a key in the format "year-month"   
+        key = f"{year}-{month}"
     
+     # Update total income and expenses
         if amount >= 0:
             total_income += amount
         else:
