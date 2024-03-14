@@ -13,7 +13,7 @@ def solution(A, D):
         key = f"{year}-{month}"
         
         # Update the transactions dictionary with the amount for the corresponding key
-        transactions[] = transactions + amount
+        transactions[key] = transactions + amount
         
         # Update total income and expenses
         if amount >= 0:
